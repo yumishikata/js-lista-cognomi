@@ -1,9 +1,16 @@
 document.getElementById("invia").addEventListener('click' , 
 function() {
+
     var lista = ["Bianchi" , "Rossi" , "Duzioni" , "Balsano" , "Verdi"];
     var cognome = document.getElementById("get_surname").value;
     lista.push(cognome);
     console.log(lista);
+    console.log(cognome);
+   if (isNaN(cognome)== false) {
+    alert("Inserire un cognome valido");
+    location.reload();
+   }
+   else {
     var lista = lista.map(lista => lista.toUpperCase());
     console.log(lista);
     var lista_ordinata = lista.sort();
@@ -20,7 +27,8 @@ function() {
     }
     
     document.getElementById("posizione").innerHTML = "Le diamo il benvenuto " + cognome + " la sua posizione è: " + posizione;
-
+   }
+   
 }
 )
 
